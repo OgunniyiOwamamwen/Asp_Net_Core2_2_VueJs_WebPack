@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var fs = require('fs');
 
 var appBasePath = './Scripts/'; // where the source files located
-var publicPath = '../bundle/'; // public path to modify asset urls. eg: '../bundle' => 'www.example.com/bundle/main.js'
+var publicPath = '../bundle/'; // public path to modify asset urls
 var bundleExportPath = './wwwroot/bundle/'; // directory to export build files
 
 var jsEntries = {}; // listing to compile
@@ -11,7 +11,7 @@ var jsEntries = {}; // listing to compile
 // We search for js files inside basePath folder and make those as entries
 fs.readdirSync(appBasePath).forEach(function (name) {
 
-    // assumption: modules are located in separate directory and each module component is imported to index.js of particular module
+    // assumption: modules are located in separate directory and each module component is imported to index.js
     var indexFile = appBasePath + name + '/index.js'
     if (fs.existsSync(indexFile)) {
         jsEntries[name] = indexFile
