@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*Vue app*@
+
+<div id="app">
+    <about-component></about-component>
+</div>
+
+@section scripts{
+    <script src="@Url.Content("~/bundle/home.js")">
+
+    </script>
+}
